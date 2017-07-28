@@ -123,12 +123,11 @@ awk 'BEGIN{s="/inet/tcp/<PORT>/0/0";for(;s|&getline c;close(c))while(c|getline)p
 
 ### Видео:
 
-<oembed>https://youtu.be/-B_U9f_Uofk</oembed>
+[![CentOS 6.5](http://img.youtube.com/vi/-B_U9f_Uofk/0.jpg)](http://www.youtube.com/watch?v=-B_U9f_Uofk "DHCP shellshock on CentOS 6.5")
 
-<oembed>https://youtu.be/u-GXXyQnSVg</oembed>
+[![Debian 7.5.0](http://img.youtube.com/vi/u-GXXyQnSVg/0.jpg)](http://www.youtube.com/watch?v=u-GXXyQnSVg "DHCP shellshock on Debian 7.5.0")
 
-<oembed>https://youtu.be/a6gijZr7Ux0</oembed>
-
+[![Ubuntu 14.04](http://img.youtube.com/vi/a6gijZr7Ux0/0.jpg)](http://www.youtube.com/watch?v=a6gijZr7Ux0 "DHCP shellshock on Ubuntu 14.04")
 
 ## Еще ~~немного~~ про DHCP
 
