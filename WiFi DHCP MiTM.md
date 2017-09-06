@@ -36,12 +36,14 @@
 Работает эта схема примерно так:
 ![WiFi DeAuth](https://upload.wikimedia.org/wikipedia/commons/9/95/Deauth_attack_sequence_diagram.svg)
 
+Переводим свободный беспроводной интерфейс в режим мониторинга:
+![Wlan1 set monitor mode](https://dl.dropboxusercontent.com/s/mva5mam46l02zc6/wlan1%20mode%20monitor.png)
 
-
-Отправляем deauth пакеты с целью отсоединить атакуемого клиента WiFi сети от точки доступа.
+Отправляем deauth пакеты с целью отсоединить атакуемого клиента **84:16:F9:19:AD:14** WiFi сети **WiFi DHCP MiTM** от точки доступа:
+![Send deauth packets](https://dl.dropboxusercontent.com/s/qkrp3t4w5x80mc7/send%20deauth%20packet.png)
 
 ## DHCPDECLINE
-После того как клиент отсоединился от точки доступа, вероятнее всего, он заново попробует подключаются к WiFi сети и получить IP-адрес по DHCP. Так как ранее он уже подключались этой сети то будет отравлять только широковещательный **DHCPREQUEST**.
+После того как клиент отсоединился от точки доступа, вероятнее всего, он заново попробует подключиться к WiFi сети **WiFi DHCP MiTM** и получить IP-адрес по DHCP. Так как ранее он уже подключались этой сети то будет отравлять только широковещательный **DHCPREQUEST**.
 ![Send DHCPREQUEST after DeAuth](https://dl.dropboxusercontent.com/s/cm0a8s7sgl97oef/dhcprequest%20after%20deauth.png)
 
 Мы перехватываем запрос клиента, но ответить быстрее точки доступа мы естественно не успеем. Поэтому клиент получает IP-адрес от DHCP-сервера полученный ранее: **192.168.1.102**. Далее клиент с помощью протокола **ARP** пытается обнаружить [конфликт IP-адресов в сети](https://tools.ietf.org/html/rfc5227).
