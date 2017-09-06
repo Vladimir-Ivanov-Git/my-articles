@@ -76,7 +76,7 @@
 Видео проведения атаки на MacOS Siera и Windows 10:
 [![WiFi DHCP MiTM](https://j.gifs.com/2R6OEz.gif)](https://youtu.be/OBXol-o2PEU)
 
-Ну и конечно же [PoC](https://github.com/Vladimir-Ivanov-Git/raw-packet).
+# Ну и конечно же [PoC](https://github.com/Vladimir-Ivanov-Git/raw-packet).
 
 # Apple vs. DHCP
 
@@ -88,6 +88,7 @@
 ![MacOS attacker DHCPACK](https://dl.dropboxusercontent.com/s/ffln8lh31m6eqzx/MacOS%20attacker%20DHCPACK.png?dl=0)
 
 Ну и конечно же видео:
+
 [![MacOS DHCP client vulnerability](https://j.gifs.com/k5zJk6.gif)](https://youtu.be/XSVT4BFUqsU)
 
 Как Вы думаете баг это или фича? Я подумал баг и на всякий случай завел заявку на Apple Bug Reporter скоро этой заявке исполнится месяц, но ни одного комментария от специалистов Apple я так и не получил.
