@@ -61,7 +61,7 @@
 ![Attacker DHCPACK](https://dl.dropboxusercontent.com/s/mm2h6t3782de3io/attacker%20dhcp%20ack.png)
 
 Клиент принимает наш DHCPACK и в качестве **шлюза по умолчанию** и **DNS-сервера** выставляет наш IP-адрес: **192.168.1.172**, а DHCPNAK от точки доступа присланный на 2 секунды позже просто проигнорирует.
-![Client network settings]()
+![Client network settings](https://dl.dropboxusercontent.com/s/0flekn1nejggcep/networks%20settings.png)
 
 Почему точка доступа прислала DHCPOFFER и DHCPNAK на **2-е секунды позже**, да еще и предложила тот же IP-адрес **192.168.1.102**, ведь клиент отказался от него?
 ![DHCPOFFER from AP](https://dl.dropboxusercontent.com/s/rfx4m994i66xzrw/dhcpoffer%20from%20AP.png)
