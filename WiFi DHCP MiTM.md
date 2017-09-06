@@ -34,12 +34,15 @@
 
 ## WiFi DeAuth
 Работает эта схема примерно так:
+
 ![WiFi DeAuth](https://upload.wikimedia.org/wikipedia/commons/9/95/Deauth_attack_sequence_diagram.svg)
 
 Переводим свободный беспроводной интерфейс в режим мониторинга:
+
 ![Wlan1 set monitor mode](https://dl.dropboxusercontent.com/s/mva5mam46l02zc6/wlan1%20mode%20monitor.png)
 
 Отправляем deauth пакеты с целью отсоединить атакуемого клиента **84:16:F9:19:AD:14** WiFi сети ESSID: **WiFi DHCP MiTM**:
+
 ![Send deauth packets](https://dl.dropboxusercontent.com/s/qkrp3t4w5x80mc7/send%20deauth%20packet.png)
 
 ## DHCPDECLINE
