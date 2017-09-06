@@ -36,6 +36,8 @@
 Работает эта схема примерно так:
 ![WiFi DeAuth](https://upload.wikimedia.org/wikipedia/commons/9/95/Deauth_attack_sequence_diagram.svg)
 
+
+
 Отправляем deauth пакеты с целью отсоединить атакуемого клиента WiFi сети от точки доступа.
 
 ## DHCPDECLINE
