@@ -19,16 +19,16 @@
 Подключаемся к атакуемой WiFi сети и производим атаку **DHCP Starvation** с целью переполнить пул свободных IP-адресов.
 Как это работает:
 
-1. Формируем и отправляем широковещательный **DHCPDISCOVER**-запрос, при этом представляемся как DHCP relay agent. В поле **giaddr** (Relay agent IP) указываем свой IP-адрес **192.168.1.198**, в поле **chaddr** (Client MAC address) - рандомный MAC **00:23:32:B1:A9:75**, при этом на канальном уровне в **SRC MAC** выставляем свой MAC-адрес.
+1. Формируем и отправляем широковещательный **DHCPDISCOVER**-запрос, при этом представляемся как DHCP relay agent. В поле **giaddr** (Relay agent IP) указываем свой IP-адрес **192.168.1.172**, в поле **chaddr** (Client MAC address) - рандомный MAC **00:01:96:E5:26:FC**, при этом на канальном уровне в **SRC MAC** выставляем свой MAC-адрес: **84:16:F9:1B:CF:F0**.
 ![DHCPDISCOVER](https://dl.dropboxusercontent.com/s/eb3q2s6y8okxwej/DHCP%20starvation%20send%20discover.png)
 
-2. Сервер отвечает сообщением **DHCPOFFER** агенту ретрансляции (нам), и предлагает клиенту с MAC-адресом **00:23:32:B1:A9:75** IP-адрес **192.168.1.121**
+2. Сервер отвечает сообщением **DHCPOFFER** агенту ретрансляции (нам), и предлагает клиенту с MAC-адресом **00:01:96:E5:26:FC** IP-адрес **192.168.1.156**
 ![DHCPOFFER](https://dl.dropboxusercontent.com/s/m9rszt1gie4jkjg/DHCP%20starvation%20recieve%20offer.png)
 
-3. После получения DHCPOFFER, отправляем широковещательный **DHCPREQUEST**-запрос, при этом в DHCP-опции с кодом 50 ([Requested IP address](https://tools.ietf.org/html/rfc2132#section-9.1)) выставляем предложений клиенту IP-адрес **192.168.1.121**, в опции с кодом 12 ([Host Name Option](https://tools.ietf.org/html/rfc2132#section-3.14)) - рандомную строку **lyzEKAAr**. **Важно:** значения полей **xid** (Transaction ID) и **chaddr** (Client MAC address) в DHCPREQUEST и DHCPDISCOVER должны быть одинаковыми, иначе сервер отбросит запрос, ведь это будет выглядеть, как другая транзакция от того же клиента, либо другой клиент с той же транзакцией.
+3. После получения DHCPOFFER, отправляем широковещательный **DHCPREQUEST**-запрос, при этом в DHCP-опции с кодом 50 ([Requested IP address](https://tools.ietf.org/html/rfc2132#section-9.1)) выставляем предложений клиенту IP-адрес **192.168.1.156**, в опции с кодом 12 ([Host Name Option](https://tools.ietf.org/html/rfc2132#section-3.14)) - рандомную строку **dBDXn0nJ**. **Важно:** значения полей **xid** (Transaction ID) и **chaddr** (Client MAC address) в DHCPREQUEST и DHCPDISCOVER должны быть одинаковыми, иначе сервер отбросит запрос, ведь это будет выглядеть, как другая транзакция от того же клиента, либо другой клиент с той же транзакцией.
 ![DHCPREQUEST](https://dl.dropboxusercontent.com/s/s345vssxo7lnj8o/DHCP%20starvation%20send%20request.png)
 
-4. Сервер отправляет агенту ретрансляции сообщение **DHCPACK**. С этого момента IP-адрес **192.168.1.121** считается зарезервированным за клиентом с MAC-адресом **00:23:32:B1:A9:75** на **12 часов** (время аренды по умолчанию).
+4. Сервер отправляет агенту ретрансляции сообщение **DHCPACK**. С этого момента IP-адрес **192.168.1.156** считается зарезервированным за клиентом с MAC-адресом **00:01:96:E5:26:FC** на **12 часов** (время аренды по умолчанию).
 ![DHCPACK](https://dl.dropboxusercontent.com/s/skflvfoyf6ut4hf/DHCP%20starvation%20recieve%20ack.png)
 ![DHCP clients](https://dl.dropboxusercontent.com/s/to9acs67jtp7bkb/DHCP%20clients.png)
 
