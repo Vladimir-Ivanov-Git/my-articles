@@ -92,14 +92,14 @@
 Видео проведения атаки на MacOS Siera и Windows 10:
 [![WiFi DHCP MiTM](https://j.gifs.com/2R6OEz.gif)](https://youtu.be/OBXol-o2PEU)
 
-# Ну и конечно же [PoC](https://github.com/Vladimir-Ivanov-Git/raw-packet).
+## Ну и конечно же [PoC](https://github.com/Vladimir-Ivanov-Git/raw-packet).
 
 # Apple vs. DHCP
 
 Как оказалось MacOS и iOS переплюнули всех в плане получения сетевых настроек по протоколу DHCP, когда эти операционные системы отправляют **DHCPREQUEST** DHCP-сервер отвечает им **DHCPACK** и они выставляют сетевые настройки из ответа сервера, вроде пока все как у всех:
 ![MacOS legal DHCPACK](https://dl.dropboxusercontent.com/s/k9ji5zi7uf74m95/MacOS%20legal%20DHCPACK.png)
 
-Но проблема в том что **DHCPREQUEST** широковещательный и злоумышленник, как правило, без особых проблем можем его перехватить и ответить **DHCPACK**, но конечно позднее легитимного DHCP-сервера, то есть ответ злоумышленника приходит вторым, все остальные DHCP-клиенты на других ОС просто проигнорируют второй DHCPACK, но на MacOS и iOS все не так.
+Но проблема в том что **DHCPREQUEST** широковещательный и злоумышленник без особых проблем может его перехватить и ответить **DHCPACK**, но конечно позднее легитимного DHCP-сервера, то есть ответ злоумышленника приходит вторым. Все остальные DHCP-клиенты на других ОС просто проигнорируют второй DHCPACK, но не MacOS и iOS.
 
 Как вы думаете какие настройки выставляют данные операционные системы? Ответ: те настройки которые будут содержаться в DHCPACK злоумышленника (во втором DHCPACK ~~во втором DHCPACK Карл~~) !
 ![MacOS attacker DHCPACK](https://dl.dropboxusercontent.com/s/ffln8lh31m6eqzx/MacOS%20attacker%20DHCPACK.png)
@@ -109,4 +109,4 @@
 [![MacOS DHCP client vulnerability](https://j.gifs.com/k5zJk6.gif)](https://youtu.be/XSVT4BFUqsU)
 
 Как Вы думаете баг это или фича? Я подумал баг и на всякий случай завел заявку на Apple Bug Reporter скоро этой заявке исполнится месяц, но ни одного комментария от специалистов Apple я так и не получил.
-![Apple bugreporter](https://dl.dropboxusercontent.com/s/yh5hg3pdgcb4mjd/Apple%20bugreporter.PNG)
+![Apple bug reporter](https://dl.dropboxusercontent.com/s/yh5hg3pdgcb4mjd/Apple%20bugreporter.PNG)
