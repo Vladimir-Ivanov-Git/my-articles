@@ -110,3 +110,6 @@
 
 Как Вы думаете баг это или фича? Я подумал баг и на всякий случай завел заявку на Apple Bug Reporter скоро этой заявке исполнится месяц, но ни одного комментария от специалистов Apple я так и не получил.
 ![Apple bug reporter](https://dl.dropboxusercontent.com/s/yh5hg3pdgcb4mjd/Apple%20bugreporter.PNG)
+
+И еще, на всякий случай, отправил письмо, но на него тоже не ответили.
+![Apple email](https://dl.dropboxusercontent.com/s/4qmo28lral962px/email.png)
